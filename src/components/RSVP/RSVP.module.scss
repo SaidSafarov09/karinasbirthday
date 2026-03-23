@@ -210,6 +210,8 @@
   padding: 32px;
   border-radius: $border-radius-lg;
   border: 1px dashed rgba($accent-orange, 0.3);
+  position: relative;
+  overflow: visible;
 }
 
 .giftIcon {
@@ -262,20 +264,29 @@
 
 .wishlistItem {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
   background: white;
-  padding: 16px;
+  padding: 24px;
   border-radius: $border-radius-md;
   border: 1px solid #f1f5f9;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
   transition: $transition-premium;
 
   &:hover {
-    transform: scale(1.02);
     box-shadow: $shadow-premium;
     border-color: $accent-orange;
   }
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+}
+
+.wishlistTop {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .wishlistThumb {
@@ -294,27 +305,198 @@
   flex-grow: 1;
 
   h4 {
-    font-size: 16px;
+    font-size: 17px;
     color: $text-dark;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    font-weight: 700;
   }
 
   p {
-    font-size: 13px;
+    font-size: 14px;
     color: $text-muted;
     margin-bottom: 4px;
-    line-height: 1.3;
+    line-height: 1.4;
   }
 }
 
-.wishlistPrice {
+.itemDescription {
   font-size: 13px;
+  color: #64748b;
+  font-style: italic;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 3px solid $accent-rose;
+}
+
+.wishlistPrice {
+  font-size: 14px;
   font-weight: 700;
   color: #94a3b8;
 }
 
-.externalIcon {
-  color: #cbd5e1;
+.wishlistActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: auto;
+
+  &.isConfirming {
+    grid-template-columns: 1fr;
+    display: block; // Or just 1fr
+  }
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: $transition-premium;
+  cursor: pointer;
+  border: none;
+}
+
+.storeBtn {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+
+  &:hover {
+    background: #f1f5f9;
+    color: $text-dark;
+  }
+}
+
+.reserveBtn {
+  background: $accent-rose;
+  color: white;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($accent-rose, 0.2);
+  }
+}
+
+.occupiedBtn {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+  grid-column: span 1;
+}
+
+.cancelBtn {
+  background: $text-dark;
+  color: white;
+
+  &:hover {
+    background: #000;
+  }
+}
+
+.confirmActions {
+  display: flex;
+  gap: 8px;
+}
+
+.confirmYes {
+  background: $accent-rose;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: $transition-premium;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba($accent-rose, 0.2);
+  }
+}
+
+.confirmNo {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  transition: $transition-premium;
+
+  &:hover {
+    background: #e2e8f0;
+  }
+}
+
+.confirmOverlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  text-align: center;
+
+  p {
+    font-size: 12px;
+    font-weight: 700;
+    color: $text-dark;
+    margin: 0;
+  }
+}
+
+.occupiedWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  grid-column: span 1;
+}
+
+.occupiedBy {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 600;
+  text-align: center;
+}
+
+.nameInputContainer {
+  p {
+    font-size: 13px;
+    color: $text-dark;
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+}
+
+.inputRow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    font-family: inherit;
+
+    &:focus {
+      outline: none;
+      border-color: $accent-rose;
+      box-shadow: 0 0 0 3px rgba($accent-rose, 0.1);
+    }
+  }
 }
 
 @media (max-width: 768px) {

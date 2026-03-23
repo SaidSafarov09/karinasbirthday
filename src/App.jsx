@@ -12,7 +12,6 @@ function App() {
 
   return (
     <div className={styles.appContainer}>
-      <MinionDecoration />
       <Hero name={name} />
       <div className={styles.contentWrapper}>
         <Info />

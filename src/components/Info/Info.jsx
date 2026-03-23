@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, Clock, MapPin, Navigation, Info as InfoIcon } from 'lucide-react';
 import styles from './Info.module.scss';
+import MinionDecoration from '../MinionDecoration/MinionDecoration';
 
 const Info = () => {
   return (
-    <section className={styles.infoSection} id="info">
+    <section className={styles.infoSection} id="info" style={{ position: 'relative' }}>
+      <MinionDecoration minionIds={[3, 5]} />
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

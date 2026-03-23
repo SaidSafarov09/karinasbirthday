@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, ArrowDown } from 'lucide-react';
 import styles from './Hero.module.scss';
+import MinionDecoration from '../MinionDecoration/MinionDecoration';
 
 const Hero = ({ name }) => {
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} style={{ position: 'relative' }}>
+      <MinionDecoration minionIds={[1, 2]} />
       <div className={styles.heroContainer}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
