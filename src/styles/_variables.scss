@@ -1,0 +1,28 @@
+// Premium & Sophisticated Party Theme
+$primary-yellow: #FEF9C3; 
+$accent-yellow: #FDE047;
+$soft-cream: #FDFCF0;
+$soft-peach: #FFF1E6;
+$accent-orange: #FB923C;
+$text-dark: #1E293B; // Slate 800
+$text-muted: #64748B; // Slate 500
+$accent-blue: #0EA5E9;
+$accent-rose: #FB7185;
+
+$font-main: 'Inter', sans-serif;
+$font-accent: 'Montserrat', sans-serif;
+
+$border-radius-xl: 40px;
+$border-radius-lg: 24px;
+$border-radius-md: 16px;
+$border-radius-sm: 8px;
+
+$shadow-premium: 0 4px 20px rgba(0, 0, 0, 0.03), 0 10px 40px rgba(0, 0, 0, 0.05);
+$shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.05), 0 20px 60px rgba(0, 0, 0, 0.08);
+
+$glass-bg: rgba(255, 255, 255, 0.7);
+$glass-border: rgba(255, 255, 255, 0.4);
+
+$transition-premium: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-smooth: $transition-premium;
+$bg-light: $soft-cream;

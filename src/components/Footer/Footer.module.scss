@@ -1,0 +1,61 @@
+@import '../../styles/variables';
+
+.footerSection {
+  background: white;
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 5px dashed $primary-yellow;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title {
+  font-size: 3rem;
+  color: $text-dark;
+  margin-top: 20px;
+}
+
+.tagline {
+  color: #888;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.shareButton {
+  background: $secondary-blue;
+  color: white;
+  padding: 18px 40px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 91, 179, 0.3);
+  overflow: hidden;
+  min-width: 320px;
+  
+  .shareText {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.heartWrapper {
+  color: $accent-pink;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .shareButton {
+    min-width: 100%;
+  }
+}
