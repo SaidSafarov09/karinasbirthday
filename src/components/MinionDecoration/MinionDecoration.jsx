@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './MinionDecoration.module.scss';
 
@@ -36,6 +36,15 @@ const MINION_CONFIGS = {
 };
 
 const MinionDecoration = ({ minionIds = [] }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <>
       {minionIds.map((id) => {
@@ -48,7 +57,9 @@ const MinionDecoration = ({ minionIds = [] }) => {
             src={minion.url}
             alt="Minion Decoration"
             className={`${styles.minion} ${minion.className}`}
-            animate={minion.animate}
+            // Выключаем анимации на мобилках для FPS
+            animate={isMobile ? {} : minion.animate}
+            loading="lazy"
             transition={{ 
               duration: 4 + id, 
               repeat: Infinity, 

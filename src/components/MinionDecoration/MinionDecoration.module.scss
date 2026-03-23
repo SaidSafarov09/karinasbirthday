@@ -89,7 +89,7 @@
 
 @media (max-width: 768px) {
   .minion {
-    filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.25));
+    filter: none !important; // Огромная оптимизация FPS на мобилах
   }
 
   .minion1 {
