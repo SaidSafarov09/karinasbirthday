@@ -58,7 +58,6 @@ const WishlistItem = ({ item, booking, userId, onReserve, onCancel }) => {
                 <button disabled className={`${styles.actionBtn} ${styles.occupiedBtn}`}>
                   Подарок занят
                 </button>
-                {booking.user_name && <span className={styles.occupiedBy}>Занял(а): {booking.user_name}</span>}
               </div>
             ) : isMine ? (
               <button
